@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.steadyscrape/jobs-data-mcp",
+  "title": "Jobs Data MCP (SteadyScrape)",
+  "description": "Live job postings from 14+ ATS career sites (Greenhouse, Lever, Workday, Ashby...) and remote jobs.",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/steady-scrape",
+  "repository": {
+    "url": "https://github.com/steadyscrape/jobs-data-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <your Apify API token> (from console.apify.com/settings/integrations). OAuth-capable clients can sign in to Apify instead.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
