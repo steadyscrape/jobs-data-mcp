@@ -5,10 +5,10 @@ A remote MCP server that gives Claude, Cursor, VS Code, ChatGPT and other MCP cl
 **Endpoint (Streamable HTTP):**
 
 ```
-https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api
+https://mcp.steadyscrape.dev/jobs/mcp
 ```
 
-The server runs on Apify's hosted MCP gateway ([mcp.apify.com](https://mcp.apify.com)) with three [SteadyScrape](https://apify.com/steady-scrape) Actors preselected. Nothing to install or host.
+The server is hosted on the [SteadyScrape MCP gateway](https://mcp.steadyscrape.dev/jobs). Tools still run in your own [Apify](https://apify.com/steady-scrape) account. Nothing to install or host.
 
 ## Tools
 
@@ -36,8 +36,7 @@ Either:
 {
   "mcpServers": {
     "jobs-data": {
-      "url": "https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api",
-      "headers": { "Authorization": "Bearer <YOUR_APIFY_TOKEN>" }
+      "url": "https://mcp.steadyscrape.dev/jobs/mcp"
     }
   }
 }
@@ -50,7 +49,7 @@ Either:
   "servers": {
     "jobs-data": {
       "type": "http",
-      "url": "https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api"
+      "url": "https://mcp.steadyscrape.dev/jobs/mcp"
     }
   }
 }
@@ -59,8 +58,7 @@ Either:
 **Claude Code:**
 
 ```bash
-claude mcp add --transport http jobs-data "https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api" \
-  --header "Authorization: Bearer $APIFY_TOKEN"
+claude mcp add --transport http jobs-data "https://mcp.steadyscrape.dev/jobs/mcp"
 ```
 
 **Claude.ai / Claude Desktop:** Settings → Connectors → *Add custom connector* → paste the endpoint URL, then sign in to Apify.
@@ -72,8 +70,7 @@ claude mcp add --transport http jobs-data "https://mcp.apify.com/?tools=steady-s
   "mcpServers": {
     "jobs-data": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.apify.com/?tools=steady-scrape/ats-job-feed,steady-scrape/career-jobs-search,steady-scrape/remote-jobs-api", "--header", "Authorization:${AUTH_HEADER}"],
-      "env": { "AUTH_HEADER": "Bearer <YOUR_APIFY_TOKEN>" }
+      "args": ["-y", "mcp-remote", "https://mcp.steadyscrape.dev/jobs/mcp"]
     }
   }
 }
