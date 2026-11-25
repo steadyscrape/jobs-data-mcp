@@ -88,6 +88,7 @@ Agents should keep requests small (for example `maxJobsPerCompany` or `maxResult
 
 - [`server.json`](server.json): official MCP Registry entry (`io.github.steadyscrape/jobs-data-mcp`)
 - [`glama.json`](glama.json): Glama maintainer claim
+- Glama listing: [glama.ai/mcp/connectors/io.github.steadyscrape/jobs-data-mcp](https://glama.ai/mcp/connectors/io.github.steadyscrape/jobs-data-mcp)
 
 More examples (Python, JavaScript, LangChain, CrewAI, n8n): [steadyscrape-examples](https://github.com/steadyscrape/steadyscrape-examples).
 
